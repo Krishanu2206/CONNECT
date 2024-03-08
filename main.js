@@ -90,7 +90,7 @@ let createpeerconnection= async(memberId) => {
     document.getElementById('user-1').classList.add('smallframe'); //when a user joins my video will be in a small frame
     
     if(!localstream){
-        localstream=await navigator.mediaDevices.getUserMedia({video:true, audio:true}); 
+        localstream=await navigator.mediaDevices.getUserMedia({video:true, audio:false}); 
         document.getElementById('user-1').srcObject= localstream; // an extra check
     }
 
@@ -146,7 +146,7 @@ let addanswer= async(answer) => {
 let togglecamera= async()=>{
     let videotrack = localstream.getTracks().find(track => track.kind === 'video');
 
-    if(videotrack.enabled){
+    if(videotrack.enabled == true){
         videotrack.enabled=false;
         document.getElementById('camera-btn').style.backgroundColor= 'rgb(255,80,80)'
     }
@@ -159,7 +159,7 @@ let togglecamera= async()=>{
 let togglemic= async()=>{
     let audiotrack = localstream.getTracks().find(track => track.kind === 'audio');
 
-    if(audiotrack.enabled){
+    if(audiotrack.enabled == true){
         audiotrack.enabled=false;
         document.getElementById('mic-btn').style.backgroundColor= 'rgb(255,80,80)'
     }
