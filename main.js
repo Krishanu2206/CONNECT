@@ -59,7 +59,7 @@ let handleUserJoined= async(memberId)=>{
 }
 
 let handleUserLeft= async(memberId) => {
-/*     document.getElementById('user-2').style.display= "none"; */
+    document.getElementById('user-2').style.display= "none";
     document.getElementById("user-1").classList.remove("smallframe");
 }
 
@@ -85,7 +85,7 @@ let createpeerconnection= async(memberId) => {
 
     remotestream= new MediaStream(); //sets a media stream
     document.getElementById('user-2').srcObject= remotestream; //establising the stream for thr user2, the person invited
-/*     document.getElementById('user-2').style.display = 'block'; */
+    document.getElementById('user-2').style.display = 'block';
 
     document.getElementById('user-1').classList.add('smallframe'); //when a user joins my video will be in a small frame
     
