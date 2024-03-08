@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONNECT</title>
+    <link rel="stylesheet" href="lobby.css"/>
+</head>
+<body>
+    <form id="join-form">
+        <input type="text" name="invite_link" required/>
+        <input type="submit" value="Join Room" />
+    </form>
+
+    <script>
+        let form=document.querySelector("#join-form");
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            let invitecode=e.target.invite_link.value;
+            window.location = `index.html?room=${invitecode}` //window.location: This is a property of the window object in web browsers that represents the current URL of the document. So, when this code executes, it effectively changes the current page's URL to index.html?room=valueOfInvitecode. This can be useful for redirecting the user to a different page or passing information through query parameters in the URL.
+        })
+    </script>
+</body>
+</html>
