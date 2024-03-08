@@ -90,7 +90,7 @@ let createpeerconnection= async(memberId) => {
     document.getElementById('user-1').classList.add('smallframe'); //when a user joins my video will be in a small frame
     
     if(!localstream){
-        localstream=await navigator.mediaDevices.getUserMedia({video:true, audio:false}); 
+        localstream=await navigator.mediaDevices.getUserMedia({video:true, audio:true}); 
         document.getElementById('user-1').srcObject= localstream; // an extra check
     }
 
